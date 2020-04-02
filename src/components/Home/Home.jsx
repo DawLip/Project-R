@@ -20,7 +20,7 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = ({}) => ({});
-
+//test
 const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
