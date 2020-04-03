@@ -12,7 +12,7 @@ class LoginPage extends React.Component {
     return (
       <>
         <div className="loginPage">
-          <Nav />
+          <Nav whichComponent="LoginPage" />
           <main className="loginPage__main">
             <h1 className="loginPage__title">Log In to Project R</h1>
             <section className="loginPage__section">
@@ -24,7 +24,7 @@ class LoginPage extends React.Component {
               <input type="password" className="loginPage__input" />
               <p className="loginPage__p">Trouble logging in?</p>
             </section>
-            <button className="loginPage__button">Log in</button>
+            <button className="loginPage__btn">Log in</button>
           </main>
         </div>
       </>
