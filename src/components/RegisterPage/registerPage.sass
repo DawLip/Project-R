@@ -6,7 +6,7 @@
     color: #fff
 
 .registerPage__main
-    +mainLoginPage
+    +mainLoginPage($mainLoginPageMargin)
 
 .registerPage__title
     +titleLoginPage($titleLoginPageFontSize)
@@ -22,3 +22,8 @@
 
 .registerPage__btn
     +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
+
+.registerPage__margin
+    height: 20px
+
+@import ../sass/_media

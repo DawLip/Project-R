@@ -5,7 +5,7 @@
     background-color: #0C0C0D
 
 .loginPage__main
-    +mainLoginPage
+    +mainLoginPage($mainLoginPageMargin)
 
 .loginPage__title
     +titleLoginPage($titleLoginPageFontSize)
@@ -24,3 +24,8 @@
 
 .loginPage__p
     margin-top: 5px
+
+.loginPage__margin
+    height: 20px
+
+@import ../sass/_media

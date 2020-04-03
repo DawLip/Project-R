@@ -28,6 +28,7 @@ class RegisterPage extends React.Component {
               <input type="password" className="registerPage__input" />
             </section>
             <button className="registerPage__btn">Sign Up</button>
+            <div className="registerPage__margin"></div>
           </main>
         </div>
       </>

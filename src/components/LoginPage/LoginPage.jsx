@@ -25,6 +25,7 @@ class LoginPage extends React.Component {
               <p className="loginPage__p">Trouble logging in?</p>
             </section>
             <button className="loginPage__btn">Log in</button>
+            <div className="loginPage__margin"></div>
           </main>
         </div>
       </>

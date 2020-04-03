@@ -1,1 +1,56 @@
 @import "mixins" ,"variables"
+
+@media  ( max-width: 320px )
+    $titleLoginPageFontSize: 32px
+
+    .loginPage__title
+        +titleLoginPage($titleLoginPageFontSize)
+    .registerPage__title
+        +titleLoginPage($titleLoginPageFontSize)
+        margin-top: 20px
+
+@media ( min-width: 410px )
+    $sectionLoginPageWidth: 250px
+
+    .loginPage__section
+        +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+    .registerPage__section
+        +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+
+@media ( min-width: 730px )
+    $titleLoginPageFontSize: 50px
+
+    $sectionLoginPageWidth: 300px
+    $sectionLoginPageMargin: 20px
+
+    $h2LoginPageFontSize: 40px
+    $h2LoginPageFontMargin: 5px
+
+    $inputLoginPageHeight: 50px
+    $inputLoginPageFontSize: 26px
+
+    $btnLoginPageHeight: 50px
+    $btnLoginPageWidth: 200px
+    $btnLoginPageFontSize: 36px
+
+    .registerPage__title
+        +titleLoginPage($titleLoginPageFontSize)
+    .registerPage__section
+        +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+    .registerPage__h2
+        +h2LoginPage($h2LoginPageFontSize, $h2LoginPageFontMargin)
+    .registerPage__input
+        +inputLoginPage($inputLoginPageHeight, $inputLoginPageFontSize, 3px)
+    .registerPage__btn
+        +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
+
+    .loginPage__title
+        +titleLoginPage($titleLoginPageFontSize)
+    .loginPage__section
+        +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+    .loginPage__h2
+        +h2LoginPage($h2LoginPageFontSize, $h2LoginPageFontMargin)
+    .loginPage__input
+        +inputLoginPage($inputLoginPageHeight, $inputLoginPageFontSize, 3px)
+    .loginPage__btn
+        +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
