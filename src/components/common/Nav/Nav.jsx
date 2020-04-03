@@ -13,21 +13,43 @@ class Nav extends React.Component {
       <>
         <nav className="nav">
           <ul className="nav__ul">
-            <li className="nav__li">
-              <Link className="nav__a" to={`/`}>
-                Start
-              </Link>
-            </li>
-            <li className="nav__li">
-              <Link className="nav__a" to={`/settings`}>
-                Settings
-              </Link>
-            </li>
-            <li className="nav__li">
-              <Link className="nav__a" to={`/login`}>
-                Log in
-              </Link>
-            </li>
+            {this.props.whichComponent === 'LoginPage' ? (
+              <>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/`}>
+                    Start
+                  </Link>
+                </li>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/settings`}>
+                    Settings
+                  </Link>
+                </li>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/register`}>
+                    Sign Up
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/`}>
+                    Start
+                  </Link>
+                </li>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/settings`}>
+                    Settings
+                  </Link>
+                </li>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/login`}>
+                    Log in
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </>

@@ -1,0 +1,24 @@
+@import '../sass/_mixins', '../sass/_variables'
+    
+.registerPage
+    min-height: 100vh
+    background-color: #0C0C0D
+    color: #fff
+
+.registerPage__main
+    +mainLoginPage
+
+.registerPage__title
+    +titleLoginPage($titleLoginPageFontSize)
+
+.registerPage__section
+    +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+
+.registerPage__h2
+    +h2LoginPage($h2LoginPageFontSize, $h2LoginPageFontMargin)
+
+.registerPage__input
+    +inputLoginPage($inputLoginPageHeight, $inputLoginPageFontSize, 3px)
+
+.registerPage__btn
+    +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)

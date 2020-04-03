@@ -11,14 +11,14 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        <div className="home">
-          <Nav />
+        <div className="Home">
+          <Nav whichComponent="RegisterPage" />
         </div>
       </>
     );
   }
 }
-//
+
 const mapStateToProps = ({}) => ({});
 const mapDispatchToProps = {};
 
