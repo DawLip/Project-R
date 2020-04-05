@@ -3,8 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import {  } from '../../actions';
 
-import Nav from '../common/Nav/Nav.jsx';
-
 import './registerPage.sass';
 
 class RegisterPage extends React.Component {
@@ -12,7 +10,6 @@ class RegisterPage extends React.Component {
     return (
       <>
         <div className="registerPage">
-          <Nav whichComponent="RegisterPage" />
           <main className="registerPage__main">
             <h1 className="registerPage__title">Join Project R today</h1>
             <section className="registerPage__section">

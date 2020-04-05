@@ -3,9 +3,40 @@
 .loginPage
     min-height: 100vh
     background-color: #0C0C0D
+    overflow: hidden
+
+.loginPage__nav
+    width: 90%
+    border-bottom: 2px solid #3F3F41
+    margin: 10px auto
+
+.loginPage__ul
+    list-style: none
+    color: #fff
+    font-size: 38px
+    display: flex
+    justify-content: center
+    align-items: center
+
+.loginPage__li
+    position: relative
+    width: 130px
+    margin: 5px 10px
+    text-align: center
+
+.loginPage__border
+    display: none
+    position: absolute
+    bottom: -7px
+    left: 0
+    height: 2px
+    width: 100%
+    background-color: #CC0000
+    
 
 .loginPage__main
     +mainLoginPage($mainLoginPageMargin)
+    width: 50%
 
 .loginPage__title
     +titleLoginPage($titleLoginPageFontSize)
@@ -27,5 +58,23 @@
 
 .loginPage__margin
     height: 20px
+
+.loginPage__mainWrap
+    display: flex
+    justify-content: space-between
+    position: relative
+    width: 200%
+    left: 0
+    top: 0
+    max-height: 500px
+
+.loginPage__li--active
+    color: #CC0000
+
+.loginPage__border--active
+    display: block
+
+.loginPage__mainWrap--active
+    left: -100%
 
 @import ../sass/_media
