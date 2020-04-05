@@ -23,16 +23,16 @@
     width: 130px
     margin: 5px 10px
     text-align: center
+    transition: .3s
 
 .loginPage__border
-    display: none
     position: absolute
     bottom: -7px
     left: 0
     height: 2px
     width: 100%
-    background-color: #CC0000
-    
+    background-color: transparent
+    transition: .3s
 
 .loginPage__main
     +mainLoginPage($mainLoginPageMargin)
@@ -67,12 +67,13 @@
     left: 0
     top: 0
     max-height: 500px
+    transition: .3s
 
 .loginPage__li--active
     color: #CC0000
 
 .loginPage__border--active
-    display: block
+    background-color: #CC0000
 
 .loginPage__mainWrap--active
     left: -100%
