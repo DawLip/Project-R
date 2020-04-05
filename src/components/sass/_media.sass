@@ -8,10 +8,18 @@
     .registerPage__title
         +titleLoginPage($titleLoginPageFontSize)
         margin-top: 20px
+    .loginPage__ul
+        font-size: 34px
+        
+
 
 @media ( min-width: 410px )
     $sectionLoginPageWidth: 250px
 
+    .loginPage__ul
+        font-size: 42px
+    .loginPage__li
+        width: 150px
     .loginPage__section
         +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
     .registerPage__section
@@ -20,7 +28,7 @@
 @media ( min-width: 730px )
     $titleLoginPageFontSize: 50px
 
-    $sectionLoginPageWidth: 300px
+    $sectionLoginPageWidth: 350px
     $sectionLoginPageMargin: 20px
 
     $h2LoginPageFontSize: 40px
@@ -33,6 +41,98 @@
     $btnLoginPageWidth: 200px
     $btnLoginPageFontSize: 36px
 
+    .loginPage__ul
+        font-size: 56px
+    .loginPage__li
+        width: 200px
+    .loginPage__p
+        margin-top: 10px
+        font-size: 20px
+    .registerPage__title
+        +titleLoginPage($titleLoginPageFontSize)
+    .registerPage__section
+        +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+    .registerPage__h2
+        +h2LoginPage($h2LoginPageFontSize, $h2LoginPageFontMargin)
+    .registerPage__input
+        +inputLoginPage($inputLoginPageHeight, $inputLoginPageFontSize, 3px)
+    .registerPage__btn
+        +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
+
+    .loginPage__title
+        +titleLoginPage($titleLoginPageFontSize)
+    .loginPage__section
+        +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+    .loginPage__h2
+        +h2LoginPage($h2LoginPageFontSize, $h2LoginPageFontMargin)
+    .loginPage__input
+        +inputLoginPage($inputLoginPageHeight, $inputLoginPageFontSize, 3px)
+    .loginPage__btn
+        +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
+
+@media ( min-width: 1024px )
+    $titleLoginPageFontSize: 62px
+
+    $sectionLoginPageWidth: 480px
+
+    $h2LoginPageFontSize: 42px
+
+    $inputLoginPageHeight: 52px
+    $inputLoginPageFontSize: 36px
+
+    $btnLoginPageHeight: 50px
+    $btnLoginPageWidth: 460px
+    $btnLoginPageFontSize: 40px
+
+    .loginPage__ul
+        font-size: 80px
+    .loginPage__li
+        width: 285px
+    .loginPage__p
+        margin-top: 10px
+    .registerPage__title
+        +titleLoginPage($titleLoginPageFontSize)
+    .registerPage__section
+        +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+    .registerPage__h2
+        +h2LoginPage($h2LoginPageFontSize, $h2LoginPageFontMargin)
+    .registerPage__input
+        +inputLoginPage($inputLoginPageHeight, $inputLoginPageFontSize, 3px)
+    .registerPage__btn
+        +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
+
+    .loginPage__title
+        +titleLoginPage($titleLoginPageFontSize)
+    .loginPage__section
+        +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
+    .loginPage__h2
+        +h2LoginPage($h2LoginPageFontSize, $h2LoginPageFontMargin)
+    .loginPage__input
+        +inputLoginPage($inputLoginPageHeight, $inputLoginPageFontSize, 3px)
+    .loginPage__btn
+        +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
+
+@media ( min-width: 1366px )
+    $titleLoginPageFontSize: 72px
+
+    $sectionLoginPageWidth: 520px
+    $sectionLoginPageMargin: 30px
+
+    $h2LoginPageFontSize: 54px
+
+    $inputLoginPageHeight: 68px
+    $inputLoginPageFontSize: 36px
+
+    $btnLoginPageHeight: 60px
+    $btnLoginPageWidth: 500px
+    $btnLoginPageFontSize: 48px
+
+    .loginPage__ul
+        font-size: 86px
+    .loginPage__li
+        width: 400px
+    .loginPage__p
+        font-size: 24px
     .registerPage__title
         +titleLoginPage($titleLoginPageFontSize)
     .registerPage__section
