@@ -60,6 +60,7 @@ class AboutPage extends React.Component {
               <img src={fightImg} className="aboutPage__img" />
             </section>
           </main>
+          <div className="aboutPage__margin"></div>
         </div>
       </>
     );

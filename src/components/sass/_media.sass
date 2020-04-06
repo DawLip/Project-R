@@ -30,7 +30,7 @@
         +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
     .registerPage__section
         +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
-
+    
 @media ( min-width: 730px )
     $titleLoginPageFontSize: 50px
 
@@ -76,6 +76,19 @@
     .loginPage__btn
         +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
 
+    .aboutPage__section
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        padding: 0px
+        margin-top: 40px
+    .aboutPage__section:nth-of-type(even)
+        flex-direction: row-reverse
+    .aboutPage__img
+        width: 45%
+    .aboutPage__article
+        width: 45%
+
 @media ( min-width: 1024px )
     $titleLoginPageFontSize: 62px
 
@@ -118,6 +131,11 @@
     .loginPage__btn
         +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
 
+    .aboutPage__h2
+        font-size: 40px
+    .aboutPage__p
+        font-size: 20px
+
 @media ( min-width: 1366px )
     $titleLoginPageFontSize: 72px
 
@@ -159,3 +177,8 @@
         +inputLoginPage($inputLoginPageHeight, $inputLoginPageFontSize, 3px)
     .loginPage__btn
         +btnLoginPage($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
+
+    .aboutPage__h2
+        font-size: 56px
+    .aboutPage__p
+        font-size: 26px
