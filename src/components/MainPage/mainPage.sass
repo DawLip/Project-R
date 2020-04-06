@@ -1,0 +1,47 @@
+@import '../sass/_mixins', '../sass/_variables'
+    
+.mainPage
+    +wrap()
+    text-align: center
+
+.mainPage__section
+    padding: 20px
+
+.mainPage__h2
+    font-size: 40px
+    font-weight: normal
+
+.mainPage__line
+    width: 90%
+    height: 2px
+    background-color: #810000
+    margin: 0 auto
+
+.mainPage__sectionMain
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+.mainPage__rectangle
+    height: 170px
+    flex-basis: 45%
+    background-color: #3F3F41
+    margin-top: 20px
+    overflow: hidden
+
+.mainPage__rectangle:nth-of-type(1)
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 120px
+    color: #810000
+
+.mainPage__img
+    width: 85%
+    max-height: 70%
+    margin: 10px auto 0
+
+.mainPage__p
+    width: 90%
+    font-size: 14px
+    margin: 0 auto
