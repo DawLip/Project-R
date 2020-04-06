@@ -1,7 +1,10 @@
 @import "mixins" ,"variables"
 
-@media  ( max-width: 320px )
+@media  ( max-width: 335px )
     $titleLoginPageFontSize: 32px
+
+    .loginPage__li
+        font-size: 34px
 
     .loginPage__title
         +titleLoginPage($titleLoginPageFontSize)
@@ -11,6 +14,9 @@
 
 @media ( min-width: 410px )
     $sectionLoginPageWidth: 250px
+
+    .aboutPage__section
+        padding: 30px
 
     .loginPage__section
         +sectionLoginPage($sectionLoginPageWidth, $sectionLoginPageMargin)
