@@ -151,18 +151,19 @@
 
     .mainPage__wrap
         display: flex
-        justify-content: space-evenly
+        justify-content: space-between
         min-height: calc(100vh - 60px)
+        padding: 0 30px
     .mainPage__section
-        width: 45%
+        width: 47%
         padding: 0
     .mainPage__line
-        position: fixed
-        left: 50%
-        top: 50%
-        transform: translate(-50%,-50%)
+        position: sticky
+        left: calc(50% - 1px) //perfectionism
+        top: 8vh
         width: 2px
-        height: 80vh
+        height: 84vh
+        margin: calc((16vh - 60px)/2) 0 0 0
     .mainPage__h2
         font-size: 72px
     .mainPage__rectangle
