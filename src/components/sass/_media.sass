@@ -89,6 +89,19 @@
     .aboutPage__article
         width: 45%
 
+    .mainPage__h2
+        font-size: 52px
+    .mainPage__section
+        padding: 30px
+    .mainPage__rectangle
+        flex-basis: 30%
+        height: 230px
+        margin-top: 30px
+    .mainPage__p
+        font-size: 18px
+    .mainPage__rectangle--transparent
+        display: block
+
 @media ( min-width: 1024px )
     $titleLoginPageFontSize: 62px
 
@@ -136,6 +149,34 @@
     .aboutPage__p
         font-size: 20px
 
+    .mainPage__wrap
+        display: flex
+        justify-content: space-evenly
+        min-height: calc(100vh - 60px)
+    .mainPage__section
+        width: 45%
+        padding: 0
+    .mainPage__line
+        position: fixed
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+        width: 2px
+        height: 80vh
+    .mainPage__h2
+        font-size: 72px
+    .mainPage__rectangle
+        height: 200px
+    .mainPage__p
+        font-size: 24px
+    .mainPage__img
+        margin: 15px auto 0
+
+@media ( min-width: 1160px )
+    .mainPage__rectangle
+        height: 230px
+    
+
 @media ( min-width: 1366px )
     $titleLoginPageFontSize: 72px
 
@@ -182,3 +223,10 @@
         font-size: 56px
     .aboutPage__p
         font-size: 26px
+
+    .mainPage__rectangle
+        height: 300px
+    .mainPage__h2
+        font-size: 90px
+    .mainPage__p
+        font-size: 30px

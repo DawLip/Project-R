@@ -31,31 +31,41 @@ class MainPage extends React.Component {
         </div>
       );
     });
+
+    if ((characters.length + 1) % 3 === 2) {
+      characters.push(<div className="mainPage__rectangle mainPage__rectangle--transparent"></div>);
+    }
+
+    if ((campaigns.length + 1) % 3 === 2) {
+      campaigns.push(<div className="mainPage__rectangle mainPage__rectangle--transparent"></div>);
+    }
     return (
       <>
         <div className="mainPage">
           <Nav whichComponent="MainPage" />
-          <section className="mainPage__section">
-            <h2 className="mainPage__h2">Characters</h2>
-            <main className="mainPage__sectionMain">
-              <div className="mainPage__rectangle" onClick={() => this.props.addCharacter()}>
-                <i className="fas fa-plus"></i>
-              </div>
-              {characters}
-            </main>
-          </section>
+          <div className="mainPage__wrap">
+            <section className="mainPage__section">
+              <h2 className="mainPage__h2">Characters</h2>
+              <main className="mainPage__sectionMain">
+                <div className="mainPage__rectangle" onClick={() => this.props.addCharacter()}>
+                  <i className="fas fa-plus"></i>
+                </div>
+                {characters}
+              </main>
+            </section>
 
-          <div className="mainPage__line"></div>
+            <div className="mainPage__line"></div>
 
-          <section className="mainPage__section">
-            <h2 className="mainPage__h2">Campaigns</h2>
-            <main className="mainPage__sectionMain">
-              <div className="mainPage__rectangle" onClick={() => this.props.addCampaign()}>
-                <i className="fas fa-plus"></i>
-              </div>
-              {campaigns}
-            </main>
-          </section>
+            <section className="mainPage__section">
+              <h2 className="mainPage__h2">Campaigns</h2>
+              <main className="mainPage__sectionMain">
+                <div className="mainPage__rectangle" onClick={() => this.props.addCampaign()}>
+                  <i className="fas fa-plus"></i>
+                </div>
+                {campaigns}
+              </main>
+            </section>
+          </div>
         </div>
       </>
     );
