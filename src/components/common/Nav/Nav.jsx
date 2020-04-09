@@ -13,21 +13,43 @@ class Nav extends React.Component {
       <>
         <nav className="nav">
           <ul className="nav__ul">
-            <li className="nav__li">
-              <Link className="nav__a" to={`/`}>
-                Start
-              </Link>
-            </li>
-            <li className="nav__li">
-              <Link className="nav__a" to={`/about`}>
-                About
-              </Link>
-            </li>
-            <li className="nav__li">
-              <Link className="nav__a" to={`/login`}>
-                Log In
-              </Link>
-            </li>
+            {this.props.gameData.isLogged ? (
+              <>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/`}>
+                    Start
+                  </Link>
+                </li>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/about`}>
+                    About
+                  </Link>
+                </li>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/main`}>
+                    Profile
+                  </Link>
+                </li>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/login`}>
+                    Log Out
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/about`}>
+                    Start
+                  </Link>
+                </li>
+                <li className="nav__li">
+                  <Link className="nav__a" to={`/login`}>
+                    Log In
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </>
@@ -35,7 +57,7 @@ class Nav extends React.Component {
   }
 }
 
-const mapStateToProps = ({}) => ({});
+const mapStateToProps = ({ gameData }) => ({ gameData });
 const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

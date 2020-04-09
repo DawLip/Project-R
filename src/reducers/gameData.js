@@ -4,7 +4,8 @@ export const gameData = dispatch => (
   state = {
     isLogInActive: true,
     characters: [{ name: 'Ragnar' }, { name: 'Otto von Duk' }, { name: 'Bruno' }],
-    campaigns: [{ name: 'Kroczący w ciemności' }, { name: 'SWAT' }]
+    campaigns: [{ name: 'Kroczący w ciemności' }, { name: 'SWAT' }],
+    isLogged: true
   },
   { type, whatActive }
 ) => {
