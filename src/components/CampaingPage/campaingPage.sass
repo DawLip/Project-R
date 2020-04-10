@@ -1,0 +1,56 @@
+@import '../sass/_mixins', '../sass/_variables'
+    
+.campaingPage
+    +wrap()
+    text-align: center
+
+.campaingPage__top
+    padding: 10px
+
+.campaingPage__title
+    font-size: 40px
+    color: #CC0000
+    font-weight: normal
+    margin: 10px 0
+
+.campaingPage__h2
+    font-size: 26px
+    font-weight: normal
+    
+.campaingPage__logo
+    width: 100%
+    margin: 20px 0
+
+.campaingPage__nextGame
+    margin: 0 auto
+    width: 220px
+
+.campaingPage__gm
+    +divBackground()
+    width: 170px
+    height: 200px
+    margin: 0 auto 10px
+
+.campaingPage__img
+    width: 90%
+    margin: 5px 0
+    box-shadow: inset -5px 0px 5px #3F3F41, inset 5px 0px 5px #3F3F41, inset 0px -5px 5px #3F3F41, inset 0px 5px 5px #3F3F41
+    border-radius: 25px
+
+.campaingPage__nextGameMain
+    +divBackground()
+    padding: 5px
+    margin-top: 30px
+
+.campaingPage__btn
+    +btn(35px,80%,26px)
+    border-radius: 17px
+
+.campaingPage__additionalButtons
+    display: flex
+    justify-content: space-evenly
+    margin: 5px 0
+
+.campaingPage__additionalButton
+    +btn(30px,45%,10px)
+    border-radius: 15px

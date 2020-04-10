@@ -21,6 +21,22 @@ export const gameData = dispatch => (
           }
         ]
       ]
+    },
+    campaing: {
+      isGameMaster: true,
+      name: 'Kroczący w Ciemności',
+      about:
+        'Kampania w uniwersum warhammera. Przygody pewnej grupy włóczącej się bez celu po świecie.',
+      gameMasterName: 'Garion',
+      nextGameDate: '31.03.2220r.',
+      players: [
+        { name: 'Otto von Duk' },
+        { name: 'Arsen' },
+        { name: 'Olaf' },
+        { name: 'Bruno' },
+        { name: 'Ragnar' },
+        { name: 'Jordan' }
+      ]
     }
   },
   { type, whatActive }
