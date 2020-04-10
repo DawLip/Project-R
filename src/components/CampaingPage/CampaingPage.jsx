@@ -1,7 +1,13 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-// import {  } from '../../actions';
+import {
+  editToggle,
+  changeTitle,
+  changePlayerName,
+  addChampion,
+  removeChampion
+} from '../../actions';
 
 import Nav from '../common/Nav/Nav.jsx';
 
@@ -14,60 +20,161 @@ import defaultImg from '../../img/default.png';
 class CampaingPage extends React.Component {
   render() {
     const players = [];
-    this.props.gameData.campaing.players.forEach(player => {
-      players.push(
-        <>
-          <div className="campaingPage__player">
-            <img src={defaultImg} className="campaingPage__img" />
-            <p className="campaingPage__p">{player.name}</p>
-          </div>
-        </>
-      );
+    this.props.gameData.campaing.players.forEach((player, index) => {
+      if (this.props.gameData.campaing.isEditMode) {
+        players.push(
+          <>
+            <div className="campaingPage__player">
+              <img src={defaultImg} className="campaingPage__img" />
+              <input
+                type="text"
+                className="campaingPage__p"
+                value={player.name}
+                onChange={e => this.props.changePlayerName(e.target.value, index)}
+              />
+              <div
+                className="campaingPage__remove"
+                onClick={() => this.props.removeChampion(index)}
+              ></div>
+            </div>
+          </>
+        );
+      } else {
+        players.push(
+          <>
+            <div className="campaingPage__player">
+              <img src={defaultImg} className="campaingPage__img" />
+              <p className="campaingPage__p">{player.name}</p>
+            </div>
+          </>
+        );
+      }
     });
     return (
       <>
         <div className="campaingPage">
           <Nav />
-          <div className="campaingPage__top">
-            <section className="campaingPage__about">
-              <h1 className="campaingPage__title">{this.props.gameData.campaing.name}</h1>
-              <h2 className="campaingPage__h2">{this.props.gameData.campaing.about}</h2>
-              <img className="campaingPage__logo" src={logo} />
-            </section>
+          {this.props.gameData.campaing.isEditMode ? (
+            <>
+              <div className="campaingPage__top">
+                <section className="campaingPage__about">
+                  <input
+                    type="text"
+                    className="campaingPage__title"
+                    value={this.props.gameData.campaing.name}
+                    onChange={e => this.props.changeTitle(e.target.value, 'name')}
+                  />
+                  <input
+                    type="text"
+                    className="campaingPage__h2"
+                    value={this.props.gameData.campaing.about}
+                    onChange={e => this.props.changeTitle(e.target.value, 'about')}
+                  />
+                  <img className="campaingPage__logo" src={logo} />
+                </section>
 
-            <aside className="campaingPage__aside">
-              <h1 className="campaingPage__title">Game Master</h1>
-              <div className="campaingPage__gm">
-                <img src={gm} className="campaingPage__img" />
-                <p className="campaingPage__gmP">{this.props.gameData.campaing.gameMasterName}</p>
+                <aside className="campaingPage__aside">
+                  <h1 className="campaingPage__title">Game Master</h1>
+                  <div className="campaingPage__gm">
+                    <img src={gm} className="campaingPage__img" />
+                    <input
+                      type="text"
+                      className="campaingPage__gmP"
+                      value={this.props.gameData.campaing.gameMasterName}
+                      onChange={e => this.props.changeTitle(e.target.value, 'gameMasterName')}
+                    />
+                  </div>
+
+                  <section className="campaingPage__nextGame">
+                    <div className="campaingPage__nextGameMain">
+                      <h2 className="campaingPage__h2">
+                        <input
+                          type="text"
+                          value={this.props.gameData.campaing.nextGameDate}
+                          onChange={e => this.props.changeTitle(e.target.value, 'nextGameDate')}
+                        />
+                      </h2>
+                      <button className="campaingPage__btn">Play</button>
+                    </div>
+
+                    {this.props.gameData.campaing.isGameMaster && (
+                      <div className="campaingPage__additionalButtons">
+                        <button className="campaingPage__additionalButton">
+                          Create Champion Template
+                        </button>
+                        <button
+                          className="campaingPage__additionalButton"
+                          onClick={() => this.props.editToggle()}
+                        >
+                          Save
+                        </button>
+                      </div>
+                    )}
+                  </section>
+                </aside>
               </div>
-
-              <section className="campaingPage__nextGame">
-                <div className="campaingPage__nextGameMain">
-                  <h2 className="campaingPage__h2">
-                    Game is planed for {this.props.gameData.campaing.nextGameDate}
-                  </h2>
-                  <button className="campaingPage__btn">Play</button>
+              <main className="campaingPage__main">
+                <h2 className="campaingPage__h2">Champions</h2>
+                <div className="campaingPage__players">
+                  {players}
+                  <div
+                    className="campaingPage__player campaingPage__addChampion"
+                    onClick={() => this.props.addChampion()}
+                  >
+                    <i className="fas fa-plus"></i>
+                  </div>
                 </div>
+              </main>
+            </>
+          ) : (
+            <>
+              {' '}
+              <div className="campaingPage__top">
+                <section className="campaingPage__about">
+                  <h1 className="campaingPage__title">{this.props.gameData.campaing.name}</h1>
+                  <h2 className="campaingPage__h2">{this.props.gameData.campaing.about}</h2>
+                  <img className="campaingPage__logo" src={logo} />
+                </section>
 
-                <div className="campaingPage__additionalButtons">
-                  <button className="campaingPage__additionalButton">
-                    Create Champion Template
-                  </button>
-                  <button className="campaingPage__additionalButton">Edit</button>
-                </div>
-              </section>
-            </aside>
-          </div>
-          <main className="campaingPage__main">
-            <h2 className="campaingPage__h2">Champions</h2>
-            <div className="campaingPage__players">
-              {players}
-              <div className="campaingPage__player">
-                <i className="fas fa-plus"></i>
+                <aside className="campaingPage__aside">
+                  <h1 className="campaingPage__title">Game Master</h1>
+                  <div className="campaingPage__gm">
+                    <img src={gm} className="campaingPage__img" />
+                    <p className="campaingPage__gmP">
+                      {this.props.gameData.campaing.gameMasterName}
+                    </p>
+                  </div>
+
+                  <section className="campaingPage__nextGame">
+                    <div className="campaingPage__nextGameMain">
+                      <h2 className="campaingPage__h2">
+                        {this.props.gameData.campaing.nextGameDate}
+                      </h2>
+                      <button className="campaingPage__btn">Play</button>
+                    </div>
+
+                    {this.props.gameData.campaing.isGameMaster && (
+                      <div className="campaingPage__additionalButtons">
+                        <button className="campaingPage__additionalButton">
+                          Create Champion Template
+                        </button>
+                        <button
+                          className="campaingPage__additionalButton"
+                          onClick={() => this.props.editToggle()}
+                        >
+                          Edit
+                        </button>
+                      </div>
+                    )}
+                  </section>
+                </aside>
               </div>
-            </div>
-          </main>
+              <main className="campaingPage__main">
+                <h2 className="campaingPage__h2">Champions</h2>
+                <div className="campaingPage__players">{players}</div>
+              </main>
+            </>
+          )}
         </div>
       </>
     );
@@ -75,6 +182,12 @@ class CampaingPage extends React.Component {
 }
 
 const mapStateToProps = ({ gameData }) => ({ gameData });
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  editToggle,
+  changeTitle,
+  changePlayerName,
+  addChampion,
+  removeChampion
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CampaingPage);

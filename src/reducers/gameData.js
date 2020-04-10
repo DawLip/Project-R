@@ -24,11 +24,12 @@ export const gameData = dispatch => (
     },
     campaing: {
       isGameMaster: true,
+      isEditMode: true,
       name: 'Kroczący w Ciemności',
       about:
         'Kampania w uniwersum warhammera. Przygody pewnej grupy włóczącej się bez celu po świecie.',
       gameMasterName: 'Garion',
-      nextGameDate: '31.03.2220r.',
+      nextGameDate: 'Game is planed for 31.03.2220r.',
       players: [
         { name: 'Otto von Duk' },
         { name: 'Arsen' },
@@ -40,7 +41,7 @@ export const gameData = dispatch => (
       ]
     }
   },
-  { type, whatActive }
+  { type, whatActive, value, whatChange, index }
 ) => {
   switch (type) {
     case 'CHANGE_ACTIVE_IN_LOGIN_PAGE': {
@@ -59,6 +60,30 @@ export const gameData = dispatch => (
       return { ...state };
     }
 
+    case 'EDIT_TOGGLE': {
+      state.campaing.isEditMode = !state.campaing.isEditMode;
+      return { ...state };
+    }
+
+    case 'CHAGE_TITLE': {
+      state.campaing[whatChange] = value;
+      return { ...state };
+    }
+
+    case 'CHAGE_PLAYER_NAME': {
+      state.campaing.players[index].name = value;
+      return { ...state };
+    }
+
+    case 'ADD_CHAMPION': {
+      state.campaing.players.push({ name: 'New Champion' });
+      return { ...state };
+    }
+
+    case 'REMOVE_CHAMPION': {
+      state.campaing.players.splice(index, 1);
+      return { ...state };
+    }
     default:
       return state;
   }
