@@ -5,7 +5,23 @@ export const gameData = dispatch => (
     isLogInActive: true,
     characters: [{ name: 'Ragnar' }, { name: 'Otto von Duk' }, { name: 'Bruno' }],
     campaigns: [{ name: 'Kroczący w ciemności' }, { name: 'SWAT' }],
-    isLogged: true
+    isLogged: true,
+    db: {
+      id: 0,
+      name: 'cechy specjalne',
+      isBigSection: true,
+      idCounter: 0,
+      content: [
+        [
+          {
+            id: 0,
+            content: '35',
+            style: '',
+            type: 'text' //textArea, checkbox, number
+          }
+        ]
+      ]
+    }
   },
   { type, whatActive }
 ) => {
