@@ -7,7 +7,7 @@ import Nav from '../common/Nav/Nav.jsx';
 
 import './mainPage.sass';
 
-import defaultImg from '../../img/mainPage/default.png';
+import defaultImg from '../../img/default.png';
 
 class MainPage extends React.Component {
   render() {

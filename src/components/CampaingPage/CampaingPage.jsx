@@ -9,9 +9,21 @@ import './campaingPage.sass';
 
 import logo from '../../img/campaing/warhammerLogo.png';
 import gm from '../../img/campaing/GM.png';
+import defaultImg from '../../img/default.png';
 
 class CampaingPage extends React.Component {
   render() {
+    const players = [];
+    this.props.gameData.campaing.players.forEach(player => {
+      players.push(
+        <>
+          <div className="campaingPage__player">
+            <img src={defaultImg} className="campaingPage__img" />
+            <p className="campaingPage__p">{player.name}</p>
+          </div>
+        </>
+      );
+    });
     return (
       <>
         <div className="campaingPage">
@@ -27,7 +39,7 @@ class CampaingPage extends React.Component {
               <h1 className="campaingPage__title">Game Master</h1>
               <div className="campaingPage__gm">
                 <img src={gm} className="campaingPage__img" />
-                <p className="campaingPage__p">{this.props.gameData.campaing.gameMasterName}</p>
+                <p className="campaingPage__gmP">{this.props.gameData.campaing.gameMasterName}</p>
               </div>
 
               <section className="campaingPage__nextGame">
@@ -49,7 +61,12 @@ class CampaingPage extends React.Component {
           </div>
           <main className="campaingPage__main">
             <h2 className="campaingPage__h2">Champions</h2>
-            <div className="campaingPage__players"></div>
+            <div className="campaingPage__players">
+              {players}
+              <div className="campaingPage__player">
+                <i className="fas fa-plus"></i>
+              </div>
+            </div>
           </main>
         </div>
       </>

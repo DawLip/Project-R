@@ -21,15 +21,15 @@
     width: 100%
     margin: 20px 0
 
-.campaingPage__nextGame
-    margin: 0 auto
-    width: 220px
-
 .campaingPage__gm
     +divBackground()
-    width: 170px
-    height: 200px
+    width: 180px
+    height: 230px
     margin: 0 auto 10px
+
+.campaingPage__gmP
+    font-size: 20px
+    line-height: 36px 
 
 .campaingPage__img
     width: 90%
@@ -40,7 +40,11 @@
 .campaingPage__nextGameMain
     +divBackground()
     padding: 5px
-    margin-top: 30px
+    margin: 30px 0 10px
+
+.campaingPage__nextGame
+    margin: 0 auto
+    width: 220px
 
 .campaingPage__btn
     +btn(35px,80%,26px)
@@ -54,3 +58,23 @@
 .campaingPage__additionalButton
     +btn(30px,45%,10px)
     border-radius: 15px
+
+.campaingPage__players
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+.campaingPage__player
+    +divBackground()
+    width: 150px
+    height: 180px
+    margin: 10px 5px
+
+.campaingPage__player:last-child
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 120px
+    color: #810000
+
+@import ../sass/_media

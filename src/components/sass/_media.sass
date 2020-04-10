@@ -36,6 +36,20 @@
     
     .nav__a
         font-size: 30px
+
+@media (min-width: 630px)
+    .campaingPage__title
+        font-size: 52px
+    .campaingPage__h2
+        font-size: 32px
+    .campaingPage__nextGame
+        width: 270px
+    .campaingPage__additionalButton
+        +btn(30px,45%,12px)
+    .campaingPage__player
+        margin: 10px 10px
+
+
     
 @media ( min-width: 730px )
     $titleLoginPageFontSize: 50px
@@ -113,6 +127,20 @@
     .nav__li
         max-width: 120px
 
+    .campaingPage__top
+        display: flex
+        flex-direction: row-reverse
+    .campaingPage__aside
+        width: 40%
+    .campaingPage__player
+        width: 170px
+        height: 200px
+    .campaingPage__main
+        margin-top: 10px
+    .campaingPage__gm
+        width: 200px
+        height: 240px
+
 @media ( min-width: 1024px )
     $titleLoginPageFontSize: 62px
 
@@ -184,6 +212,12 @@
     .mainPage__img
         margin: 15px auto 0
 
+    .campaingPage__player
+        width: 180px
+        height: 215px
+    .campaingPage__p
+        font-size: 20px
+
 @media ( min-width: 1160px )
     .mainPage__rectangle
         height: 230px
@@ -242,3 +276,18 @@
         font-size: 90px
     .mainPage__p
         font-size: 30px
+
+    .campaingPage__title
+        font-size: 60px
+    .campaingPage__h2
+        font-size: 48px
+    .campaingPage__aside
+        width: 30%
+    .campaingPage__about
+        width: 70%
+    .campaingPage__nextGame
+        width: 300px
+    .campaingPage__player
+        margin: 10px 10px
+    .campaingPage__player:last-child
+        margin: 10px 10px 30px

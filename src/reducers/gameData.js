@@ -35,6 +35,7 @@ export const gameData = dispatch => (
         { name: 'Olaf' },
         { name: 'Bruno' },
         { name: 'Ragnar' },
+        { name: 'Jordan' },
         { name: 'Jordan' }
       ]
     }
