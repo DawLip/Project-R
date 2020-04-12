@@ -19,10 +19,9 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={AboutPage} />
         <Route path="/login" component={LoginPage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/main" component={MainPage} />
+        <Route path="/home" component={MainPage} />
         <Route path="/champion" component={ChampionPage} />
         <Route path="/campaing" component={CampaingPage} />
       </Switch>
