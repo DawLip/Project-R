@@ -54,9 +54,9 @@ class LoginPage extends React.Component {
               <section className="loginPage__section">
                 <h2 className="loginPage__h2">Password</h2>
                 <input type="password" className="loginPage__input" />
-                <p className="loginPage__p">Trouble logging in?</p>
               </section>
               <button className="loginPage__btn">Log in</button>
+              <p className="loginPage__p">Trouble logging in?</p>
               <div className="loginPage__margin"></div>
             </main>
             <RegisterPage />
