@@ -35,7 +35,9 @@ class CampaingPage extends React.Component {
               <div
                 className="campaingPage__remove"
                 onClick={() => this.props.removeChampion(index)}
-              ></div>
+              >
+                <div className="campaingPage__line"></div>
+              </div>
             </div>
           </>
         );
@@ -64,12 +66,11 @@ class CampaingPage extends React.Component {
                     value={this.props.gameData.campaing.name}
                     onChange={e => this.props.changeTitle(e.target.value, 'name')}
                   />
-                  <input
-                    type="text"
+                  <textarea
                     className="campaingPage__h2 campaingPage__h2Input"
                     value={this.props.gameData.campaing.about}
                     onChange={e => this.props.changeTitle(e.target.value, 'about')}
-                  />
+                  ></textarea>
                   <img className="campaingPage__logo" src={logo} />
                 </section>
 
@@ -87,12 +88,12 @@ class CampaingPage extends React.Component {
 
                   <section className="campaingPage__nextGame">
                     <div className="campaingPage__nextGameMain">
-                      <input
+                      <textarea
                         className="campaingPage__h2 campaingPage__h2Input"
                         type="text"
                         value={this.props.gameData.campaing.nextGameDate}
                         onChange={e => this.props.changeTitle(e.target.value, 'nextGameDate')}
-                      />
+                      ></textarea>
                       <button className="campaingPage__btn">Play</button>
                     </div>
 

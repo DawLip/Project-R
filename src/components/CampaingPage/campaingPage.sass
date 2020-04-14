@@ -66,6 +66,7 @@
 
 .campaingPage__player
     +divBackground()
+    position: relative
     width: 150px
     height: 180px
     margin: 10px 5px
@@ -94,10 +95,28 @@
     border: 2px solid #810000
 
 .campaingPage__h2Input
-    +inputMain(64px)
-    overflow-wrap: break-word
+    +inputMain(100px)
+    width: 95%
     
 .campaingPage__h2Input:focus
     border: 2px solid #810000
+
+.campaingPage__remove
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translate(-50%,50%)
+    height: 20px
+    width: 20px
+    border-radius: 50%
+    background-color: #810000
+
+.campaingPage__line
+    height: 3px
+    width: 70%
+    background-color: #0C0C0D
 
 @import ../sass/_media
