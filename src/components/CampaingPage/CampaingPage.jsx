@@ -28,7 +28,7 @@ class CampaingPage extends React.Component {
               <img src={defaultImg} className="campaingPage__img" />
               <input
                 type="text"
-                className="campaingPage__p"
+                className="campaingPage__p campaingPage__input"
                 value={player.name}
                 onChange={e => this.props.changePlayerName(e.target.value, index)}
               />
@@ -60,13 +60,13 @@ class CampaingPage extends React.Component {
                 <section className="campaingPage__about">
                   <input
                     type="text"
-                    className="campaingPage__title"
+                    className="campaingPage__title campaingPage__titleInput"
                     value={this.props.gameData.campaing.name}
                     onChange={e => this.props.changeTitle(e.target.value, 'name')}
                   />
                   <input
                     type="text"
-                    className="campaingPage__h2"
+                    className="campaingPage__h2 campaingPage__h2Input"
                     value={this.props.gameData.campaing.about}
                     onChange={e => this.props.changeTitle(e.target.value, 'about')}
                   />
@@ -79,7 +79,7 @@ class CampaingPage extends React.Component {
                     <img src={gm} className="campaingPage__img" />
                     <input
                       type="text"
-                      className="campaingPage__gmP"
+                      className="campaingPage__gmP campaingPage__input"
                       value={this.props.gameData.campaing.gameMasterName}
                       onChange={e => this.props.changeTitle(e.target.value, 'gameMasterName')}
                     />
@@ -87,13 +87,12 @@ class CampaingPage extends React.Component {
 
                   <section className="campaingPage__nextGame">
                     <div className="campaingPage__nextGameMain">
-                      <h2 className="campaingPage__h2">
-                        <input
-                          type="text"
-                          value={this.props.gameData.campaing.nextGameDate}
-                          onChange={e => this.props.changeTitle(e.target.value, 'nextGameDate')}
-                        />
-                      </h2>
+                      <input
+                        className="campaingPage__h2 campaingPage__h2Input"
+                        type="text"
+                        value={this.props.gameData.campaing.nextGameDate}
+                        onChange={e => this.props.changeTitle(e.target.value, 'nextGameDate')}
+                      />
                       <button className="campaingPage__btn">Play</button>
                     </div>
 
