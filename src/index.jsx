@@ -6,10 +6,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './reducers/index.js';
 
-import Home from './components/Home/Home.jsx';
+import Main from './components/Main/Main.jsx';
 import LoginPage from './components/LoginPage/LoginPage.jsx';
 import StartPage from './components/StartPage/StartPage.jsx';
-import MainPage from './components/MainPage/MainPage.jsx';
+import HomePage from './components/HomePage/HomePage.jsx';
 import ChampionPage from './components/ChampionPage/ChampionPage.jsx';
 import CampaingPage from './components/CampaingPage/CampaingPage.jsx';
 
@@ -21,7 +21,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={StartPage} />
         <Route path="/login" component={LoginPage} />
-        <Route path="/home" component={MainPage} />
+        <Route path="/home" component={HomePage} />
         <Route path="/champion" component={ChampionPage} />
         <Route path="/campaing" component={CampaingPage} />
       </Switch>
