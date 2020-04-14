@@ -22,7 +22,7 @@
 @media ( min-width: 410px )
     $sectionLoginPageWidth: 250px
 
-    .aboutPage__section
+    .startPage__section
         padding: 30px
 
     .loginPage__ul
@@ -96,30 +96,30 @@
     .loginPage__btn
         +btn($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
 
-    .aboutPage__section
+    .startPage__section
         display: flex
         justify-content: space-evenly
         align-items: center
         padding: 0px
         margin-top: 40px
-    .aboutPage__section:nth-of-type(even)
+    .startPage__section:nth-of-type(even)
         flex-direction: row-reverse
-    .aboutPage__img
+    .startPage__img
         width: 45%
-    .aboutPage__article
+    .startPage__article
         width: 45%
 
-    .mainPage__h2
+    .homePage__h2
         font-size: 52px
-    .mainPage__section
+    .homePage__section
         padding: 30px
-    .mainPage__rectangle
+    .homePage__rectangle
         flex-basis: 30%
         height: 230px
         margin-top: 30px
-    .mainPage__p
+    .homePage__p
         font-size: 18px
-    .mainPage__rectangle--transparent
+    .homePage__rectangle--transparent
         display: block
 
     .nav__ul
@@ -183,33 +183,33 @@
     .loginPage__btn
         +btn($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
 
-    .aboutPage__h2
+    .startPage__h2
         font-size: 40px
-    .aboutPage__p
+    .startPage__p
         font-size: 20px
 
-    .mainPage__wrap
+    .homePage__wrap
         display: flex
         justify-content: space-between
         min-height: calc(100vh - 60px)
         padding: 0 30px
-    .mainPage__section
+    .homePage__section
         width: 47%
         padding: 0
-    .mainPage__line
+    .homePage__line
         position: sticky
         left: calc(50% - 1px) //perfectionism
         top: 8vh
         width: 2px
         height: 84vh
         margin: calc((16vh - 60px)/2) 0 0 0
-    .mainPage__h2
+    .homePage__h2
         font-size: 72px
-    .mainPage__rectangle
+    .homePage__rectangle
         height: 200px
-    .mainPage__p
+    .homePage__p
         font-size: 24px
-    .mainPage__img
+    .homePage__img
         margin: 15px auto 0
 
     .campaingPage__player
@@ -219,7 +219,7 @@
         font-size: 20px
 
 @media ( min-width: 1160px )
-    .mainPage__rectangle
+    .homePage__rectangle
         height: 230px
     
 
@@ -265,16 +265,17 @@
     .loginPage__btn
         +btn($btnLoginPageHeight, $btnLoginPageWidth, $btnLoginPageFontSize)
 
-    .aboutPage__h2
+    .startPage__h2
         font-size: 56px
-    .aboutPage__p
+    .startPage__p
         font-size: 26px
 
-    .mainPage__rectangle
-        height: 300px
-    .mainPage__h2
+    .homePage__rectangle
+        height: 280px
+        flex-basis: 220px
+    .homePage__h2
         font-size: 90px
-    .mainPage__p
+    .homePage__p
         font-size: 30px
 
     .campaingPage__title

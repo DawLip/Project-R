@@ -16,12 +16,12 @@ class Nav extends React.Component {
             {this.props.gameData.isLogged ? (
               <>
                 <li className="nav__li">
-                  <Link className="nav__a" to={`/about`}>
+                  <Link className="nav__a" to={`/`}>
                     Start
                   </Link>
                 </li>
                 <li className="nav__li">
-                  <Link className="nav__a" to={`/main`}>
+                  <Link className="nav__a" to={`/home`}>
                     Home
                   </Link>
                 </li>
@@ -32,7 +32,7 @@ class Nav extends React.Component {
                 </li>
                 <li className="nav__li">
                   <Link className="nav__a" to={`/login`}>
-                    Log Out
+                    Log In
                   </Link>
                 </li>
               </>
