@@ -30,6 +30,7 @@ export const gameData = dispatch => (
         'Kampania w uniwersum warhammera. Przygody pewnej grupy włóczącej się bez celu po świecie.',
       gameMasterName: 'Garion',
       nextGameDate: 'Game is planed for 31.03.2220r.',
+      npc: [{ name: 'NPC 1' }, { name: 'NPC 2' }, { name: 'NPC 3' }],
       players: [
         { name: 'Otto von Duk' },
         { name: 'Arsen' },
