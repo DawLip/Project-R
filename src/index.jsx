@@ -13,6 +13,7 @@ import HomePage from './components/HomePage/HomePage.jsx';
 import ChampionPage from './components/ChampionPage/ChampionPage.jsx';
 import CampaingPage from './components/CampaingPage/CampaingPage.jsx';
 import GamePage from './components/GamePage/GamePage.jsx';
+import ProfilePage from './components/ProfilePage/ProfilePage.jsx';
 
 import './style.sass';
 
@@ -26,6 +27,7 @@ const App = () => (
         <Route path="/champion" component={ChampionPage} />
         <Route path="/campaing" component={CampaingPage} />
         <Route path="/game" component={GamePage} />
+        <Route path="/profile" component={ProfilePage} />
       </Switch>
     </Router>
   </Provider>

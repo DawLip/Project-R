@@ -11,8 +11,6 @@ import './gamePage.sass';
 
 import ChampionCard from '../common/ChampionCard/ChampionCard.jsx';
 
-import defaultImg from '../../img/default.png';
-
 class GamePage extends React.Component {
   render() {
     const npc = [];

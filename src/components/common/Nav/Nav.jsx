@@ -26,7 +26,7 @@ class Nav extends React.Component {
                   </Link>
                 </li>
                 <li className="nav__li">
-                  <Link className="nav__a" to={`/`}>
+                  <Link className="nav__a" to={`/profile`}>
                     Profile
                   </Link>
                 </li>
