@@ -1,7 +1,13 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import {} from '../../actions';
+import {
+  editEmailToggle,
+  editUsernameToggle,
+  changeProfileData,
+  saveUsername,
+  changePassword
+} from '../../actions';
 
 import './profilePage.sass';
 
@@ -30,8 +36,34 @@ class ProfilePage extends React.Component {
                 <div className="profilePage__module">
                   <p className="profilePage__p">Name</p>
                   <div className="profilePage__edit">
-                    <p className="profilePage__editP">Duk2123</p>
-                    <button className="profilePage__btn">Edit</button>
+                    {this.props.gameData.isUsernameEditing ? (
+                      <>
+                        <input
+                          type="text"
+                          className="profilePage__editP profilePage__input"
+                          value={this.props.gameData.newUsername}
+                          onChange={e =>
+                            this.props.changeProfileData(e.target.value, 'newUsername')
+                          }
+                        />
+                        <button
+                          className="profilePage__btn"
+                          onClick={() => this.props.saveUsername()}
+                        >
+                          Save
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <p className="profilePage__editP">{this.props.gameData.username}</p>
+                        <button
+                          className="profilePage__btn"
+                          onClick={() => this.props.editUsernameToggle()}
+                        >
+                          Edit
+                        </button>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -39,7 +71,12 @@ class ProfilePage extends React.Component {
                   <p className="profilePage__p">E-Mail</p>
                   <div className="profilePage__edit">
                     <p className="profilePage__editP">...</p>
-                    <button className="profilePage__btn">Edit</button>
+                    <button
+                      className="profilePage__btn"
+                      onClick={() => this.props.editEmailToggle()}
+                    >
+                      Edit
+                    </button>
                   </div>
                 </div>
               </div>
@@ -47,7 +84,49 @@ class ProfilePage extends React.Component {
 
             <section className="profilePage__section">
               <h2 className="profilePage__h2">Change Password</h2>
-              <div className="profilePage__rectangle"></div>
+              <div className="profilePage__rectangle">
+                <div className="profilePage__module">
+                  <p className="profilePage__p">Current Password</p>
+                  <div className="profilePage__edit">
+                    <input
+                      type="password"
+                      className="profilePage__password profilePage__input"
+                      value={this.props.gameData.currentPassword}
+                      onChange={e =>
+                        this.props.changeProfileData(e.target.value, 'currentPassword')
+                      }
+                    />
+                  </div>
+                </div>
+
+                <div className="profilePage__module">
+                  <p className="profilePage__p">New Password</p>
+                  <div className="profilePage__edit">
+                    <input
+                      type="password"
+                      className="profilePage__password profilePage__input"
+                      value={this.props.gameData.newPassword}
+                      onChange={e => this.props.changeProfileData(e.target.value, 'newPassword')}
+                    />
+                  </div>
+                </div>
+
+                <div className="profilePage__module">
+                  <p className="profilePage__p">Confirm New Password</p>
+                  <div className="profilePage__edit">
+                    <input
+                      type="password"
+                      className="profilePage__password profilePage__input"
+                      value={this.props.gameData.newPassword2}
+                      onChange={e => this.props.changeProfileData(e.target.value, 'newPassword2')}
+                    />
+                  </div>
+                </div>
+                <p className="profilePage__error">{this.props.gameData.errorText}</p>
+                <button className="profilePage__submit" onClick={() => this.props.changePassword()}>
+                  Submit
+                </button>
+              </div>
             </section>
           </main>
         </div>
@@ -57,6 +136,12 @@ class ProfilePage extends React.Component {
 }
 
 const mapStateToProps = ({ gameData }) => ({ gameData });
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  editEmailToggle,
+  editUsernameToggle,
+  changeProfileData,
+  saveUsername,
+  changePassword
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);

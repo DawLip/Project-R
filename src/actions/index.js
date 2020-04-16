@@ -40,3 +40,25 @@ export const removeChampion = index => ({
   type: 'REMOVE_CHAMPION',
   index
 });
+
+export const editUsernameToggle = () => ({
+  type: 'EDIT_USERNAME_TOGGLE'
+});
+
+export const editEmailToggle = () => ({
+  type: 'EDIT_EMAIL_TOGGLE'
+});
+
+export const changeProfileData = (value, whatChange) => ({
+  type: 'CHANGE_PROFILE_DATA',
+  value,
+  whatChange
+});
+
+export const saveUsername = () => ({
+  type: 'SAVE_USERNAME'
+});
+
+export const changePassword = () => ({
+  type: 'CHANGE_PASSWORD'
+});
