@@ -62,3 +62,8 @@ export const saveUsername = () => ({
 export const changePassword = () => ({
   type: 'CHANGE_PASSWORD'
 });
+
+export const isActiveModuleToggle = whatChange => ({
+  type: 'IS_ACTIVE_MODULE_TOGGLE',
+  whatChange
+});

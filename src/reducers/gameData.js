@@ -51,7 +51,19 @@ export const gameData = dispatch => (
         { name: 'Jordan' },
         { name: 'Jordan' }
       ]
-    }
+    },
+    modules: [
+      { name: 'Roll History', tags: ['dices'], isActive: true, isOfficial: true },
+      { name: 'Chat', tags: ['other'], isActive: true, isOfficial: true },
+      {
+        name: 'WH Crit Calculator',
+        tags: ['warHammer', 'dices'],
+        isActive: false,
+        isOfficial: true
+      },
+      { name: 'WH initiative table', tags: ['warHammer'], isActive: false, isOfficial: true },
+      { name: 'example', tags: ['examples'], isActive: false, isOfficial: false }
+    ]
   },
   { type, whatActive, value, whatChange, index }
 ) => {
@@ -157,6 +169,11 @@ export const gameData = dispatch => (
       state.newPassword = '';
       state.newPassword2 = '';
 
+      return { ...state };
+    }
+
+    case 'IS_ACTIVE_MODULE_TOGGLE': {
+      whatChange.isActive = !whatChange.isActive;
       return { ...state };
     }
 
