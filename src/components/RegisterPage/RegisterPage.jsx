@@ -1,30 +1,42 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-// import {  } from '../../actions';
+import { register } from '../../actions';
 
 import './registerPage.sass';
 
 class RegisterPage extends React.Component {
+  state = {
+    username: '',
+    email: '',
+    password: ''
+  };
+
   render() {
+    const inputs = ['username', 'email', 'password'];
+    const { username, email, password } = this.state;
     return (
       <>
         <div className="registerPage">
           <main className="registerPage__main">
             <h1 className="registerPage__title">Join Project R today</h1>
-            <section className="registerPage__section">
-              <h2 className="registerPage__h2">Username</h2>
-              <input type="text" className="registerPage__input" />
-            </section>
-            <section className="registerPage__section">
-              <h2 className="registerPage__h2">Email</h2>
-              <input type="text" className="registerPage__input" />
-            </section>
-            <section className="registerPage__section">
-              <h2 className="registerPage__h2">Password</h2>
-              <input type="password" className="registerPage__input" />
-            </section>
-            <button className="registerPage__btn">Sign Up</button>
+            {inputs.map(input => (
+              <section className="loginPage__section" key={input}>
+                <h2 className="loginPage__h2">{input.charAt(0).toUpperCase() + input.slice(1)}</h2>
+                <input
+                  className="loginPage__input"
+                  type={input === 'password' ? 'password' : 'text'}
+                  value={this.state[input]}
+                  onChange={e => this.setState({ [input]: e.target.value })}
+                />
+              </section>
+            ))}
+            <button
+              className="registerPage__btn"
+              onClick={() => this.props.register(username, email, password)}
+            >
+              Sign Up
+            </button>
             <div className="registerPage__margin"></div>
           </main>
         </div>
@@ -34,6 +46,6 @@ class RegisterPage extends React.Component {
 }
 
 const mapStateToProps = ({}) => ({});
-const mapDispatchToProps = {};
+const mapDispatchToProps = { register };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterPage);

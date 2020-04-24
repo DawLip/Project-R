@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { changeActiveInLoginPage } from '../../actions';
+import { changeActiveInLoginPage, logIn } from '../../actions';
 
 import Nav from '../common/Nav/Nav.jsx';
 import RegisterPage from '../RegisterPage/RegisterPage.jsx';
@@ -9,7 +9,14 @@ import RegisterPage from '../RegisterPage/RegisterPage.jsx';
 import './loginPage.sass';
 
 class LoginPage extends React.Component {
+  state = {
+    email: '',
+    password: ''
+  };
+
   render() {
+    const inputs = ['email', 'password'];
+
     return (
       <>
         <div className="loginPage">
@@ -47,16 +54,25 @@ class LoginPage extends React.Component {
           >
             <main className="loginPage__main">
               <h1 className="loginPage__title">Log In to Project R</h1>
-              <section className="loginPage__section">
-                <h2 className="loginPage__h2">Username</h2>
-                <input type="text" className="loginPage__input" />
-              </section>
-              <section className="loginPage__section">
-                <h2 className="loginPage__h2">Password</h2>
-                <input type="password" className="loginPage__input" />
-                <p className="loginPage__p">Trouble logging in?</p>
-              </section>
-              <button className="loginPage__btn">Log in</button>
+              {inputs.map(input => (
+                <section className="loginPage__section" key={input}>
+                  <h2 className="loginPage__h2">
+                    {input.charAt(0).toUpperCase() + input.slice(1)}
+                  </h2>
+                  <input
+                    type={input === 'password' ? 'password' : 'text'}
+                    className="loginPage__input"
+                    value={this.state[input]}
+                    onChange={e => this.setState({ [input]: e.target.value })}
+                  />
+                </section>
+              ))}
+              <button
+                className="loginPage__btn"
+                onClick={() => this.props.logIn(this.state.email, this.state.password)}
+              >
+                Log in
+              </button>
               <div className="loginPage__margin"></div>
             </main>
             <RegisterPage />
@@ -68,6 +84,6 @@ class LoginPage extends React.Component {
 }
 
 const mapStateToProps = ({ gameData }) => ({ gameData });
-const mapDispatchToProps = { changeActiveInLoginPage };
+const mapDispatchToProps = { changeActiveInLoginPage, logIn };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

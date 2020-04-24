@@ -3,6 +3,19 @@ export const socketioInit = gameToken => ({
   gameToken
 });
 
+export const logIn = (email, password) => ({
+  type: 'LOG_IN',
+  email,
+  password
+});
+
+export const register = (username, email, password) => ({
+  type: 'REGISTER',
+  username,
+  email,
+  password
+});
+
 export const changeActiveInLoginPage = whatActive => ({
   type: 'CHANGE_ACTIVE_IN_LOGIN_PAGE',
   whatActive

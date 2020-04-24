@@ -1,4 +1,10 @@
-import { updateGameData, randomColors, countPoints } from '../actions/index.js';
+// import { updateGameData, randomColors, countPoints } from '../actions/index.js';
+
+const { createApolloFetch } = require('apollo-fetch');
+
+const fetch = createApolloFetch({
+  uri: '/graphql'
+});
 
 export const gameData = dispatch => (
   state = {
@@ -44,6 +50,32 @@ export const gameData = dispatch => (
   { type, whatActive, value, whatChange, index }
 ) => {
   switch (type) {
+    case 'LOG_IN': {
+      // fetch({
+      //   query: `{
+      //     accessCode(password:"${password}")
+      //   }`
+      // }).then(res => {
+      //   console.log(res);
+      //   // dispatch(
+      //   //   updateData({
+      //   //     accessCode: res.data.accessCode,
+      //   //     redirect: '/menu'
+      //   //   })
+      //   // );
+      // });
+      console.log('login');
+    }
+
+    case 'REGISTER': {
+      console.log('redister');
+      fetch({
+        query: '{ createUser}'
+      }).then(res => {
+        console.log(res);
+      });
+    }
+
     case 'CHANGE_ACTIVE_IN_LOGIN_PAGE': {
       if (whatActive === 1) state.isLogInActive = true;
       else state.isLogInActive = false;
