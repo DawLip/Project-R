@@ -27,6 +27,7 @@ module.exports = [
     devtool: 'inline-source-map',
     node: { fs: 'empty' },
     plugins: [htmlPlugin],
+    externals: ['uws', 'net'],
     module: {
       rules: [
         {
@@ -56,7 +57,7 @@ module.exports = [
     },
     devtool: 'inline-source-map',
     node: { fs: 'empty' },
-    externals: ['uws', 'net'],
+    externals: ['uws', 'net', 'mongodb-client-encryption'],
     module: {
       rules: [
         {

@@ -2,6 +2,6 @@
   "env": {
     "MONGO_USER": "user",
     "MONGO_PASSWORD": "R6Fp9J0b4iO0wChg",
-    "MONGO_DATABASE_NAME": "zolty-smok"
+    "MONGO_DATABASE_NAME": "Project_R"
   }
 }

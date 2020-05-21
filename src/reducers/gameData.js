@@ -47,33 +47,33 @@ export const gameData = dispatch => (
       ]
     }
   },
-  { type, whatActive, value, whatChange, index }
+  { type, whatActive, value, whatChange, index, email, password }
 ) => {
   switch (type) {
     case 'LOG_IN': {
-      // fetch({
-      //   query: `{
-      //     accessCode(password:"${password}")
-      //   }`
-      // }).then(res => {
-      //   console.log(res);
-      //   // dispatch(
-      //   //   updateData({
-      //   //     accessCode: res.data.accessCode,
-      //   //     redirect: '/menu'
-      //   //   })
-      //   // );
-      // });
+      fetch({
+        query: `{
+          login(email: "${email}", password:"${password}")
+        }`
+      }).then(res => {
+        console.log(res);
+        // dispatch(
+        //   updateData({
+        //     accessCode: res.data.accessCode,
+        //     redirect: '/menu'
+        //   })
+        // );
+      });
       console.log('login');
     }
 
     case 'REGISTER': {
-      console.log('redister');
-      fetch({
-        query: '{ createUser}'
-      }).then(res => {
-        console.log(res);
-      });
+      console.log('register');
+      // fetch({
+      //   query: '{ createUser}'
+      // }).then(res => {
+      //   console.log(res);
+      // });
     }
 
     case 'CHANGE_ACTIVE_IN_LOGIN_PAGE': {

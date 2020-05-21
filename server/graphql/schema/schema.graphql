@@ -1,3 +1,4 @@
 type Query {
-  hello: String
+  login(email: String, password: String): String
+  register(username: String, email: String, password: String): String
 }
