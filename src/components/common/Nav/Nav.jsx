@@ -21,18 +21,18 @@ class Nav extends React.Component {
                   </Link>
                 </li>
                 <li className="nav__li">
-                  <Link className="nav__a" to={`/about`}>
-                    About
+                  <Link className="nav__a" to={`/home`}>
+                    Home
                   </Link>
                 </li>
                 <li className="nav__li">
-                  <Link className="nav__a" to={`/main`}>
+                  <Link className="nav__a" to={`/profile`}>
                     Profile
                   </Link>
                 </li>
                 <li className="nav__li">
                   <Link className="nav__a" to={`/login`}>
-                    Log Out
+                    Log In
                   </Link>
                 </li>
               </>
@@ -40,7 +40,7 @@ class Nav extends React.Component {
               <>
                 <li className="nav__li">
                   <Link className="nav__a" to={`/about`}>
-                    Start
+                    Home
                   </Link>
                 </li>
                 <li className="nav__li">

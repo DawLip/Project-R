@@ -8,10 +8,7 @@
     padding: 10px
 
 .campaingPage__title
-    font-size: 40px
-    color: #CC0000
-    font-weight: normal
-    margin: 10px 0
+    +titles(40px)
 
 .campaingPage__h2
     font-size: 26px
@@ -66,6 +63,7 @@
 
 .campaingPage__player
     +divBackground()
+    position: relative
     width: 150px
     height: 180px
     margin: 10px 5px
@@ -76,5 +74,46 @@
     align-items: center
     font-size: 120px
     color: #810000
+
+.campaingPage__input
+    +inputMain(25px)
+    border: none
+    width: 90%
+
+.campaingPage__input:focus
+    border: 2px solid #810000
+
+.campaingPage__titleInput
+    +inputMain(76px)
+    color: #CC0000
+    margin-bottom: 5px
+    
+.campaingPage__titleInput:focus
+    border: 2px solid #810000
+
+.campaingPage__h2Input
+    +inputMain(100px)
+    width: 95%
+    
+.campaingPage__h2Input:focus
+    border: 2px solid #810000
+
+.campaingPage__remove
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translate(-50%,50%)
+    height: 20px
+    width: 20px
+    border-radius: 50%
+    background-color: #810000
+
+.campaingPage__line
+    height: 3px
+    width: 70%
+    background-color: #0C0C0D
 
 @import ../sass/_media

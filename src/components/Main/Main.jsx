@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 
 import Nav from '../common/Nav/Nav.jsx';
 
-import './home.sass';
+import './main.sass';
 
-class Home extends React.Component {
+class Main extends React.Component {
   render() {
     return (
       <>
-        <div className="Home">
+        <div className="Main">
           <Nav whichComponent="RegisterPage" />
         </div>
       </>
@@ -22,4 +22,4 @@ class Home extends React.Component {
 const mapStateToProps = ({}) => ({});
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

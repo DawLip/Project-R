@@ -8,6 +8,17 @@ const fetch = createApolloFetch({
 
 export const gameData = dispatch => (
   state = {
+    username: 'Lipson',
+    password: 'kebab',
+    email: 'lipax22@gmail.com',
+    newUsername: 'Lipson',
+    newEmail: 'lipax22@gmail.com',
+    currentPassword: '', //for check password
+    newPassword: '',
+    newPassword2: '',
+    errorText: '',
+    isEmailEditing: false,
+    isUsernameEditing: false,
     isLogInActive: true,
     characters: [{ name: 'Ragnar' }, { name: 'Otto von Duk' }, { name: 'Bruno' }],
     campaigns: [{ name: 'Kroczący w ciemności' }, { name: 'SWAT' }],
@@ -36,6 +47,7 @@ export const gameData = dispatch => (
         'Kampania w uniwersum warhammera. Przygody pewnej grupy włóczącej się bez celu po świecie.',
       gameMasterName: 'Garion',
       nextGameDate: 'Game is planed for 31.03.2220r.',
+      npc: [{ name: 'NPC 1' }, { name: 'NPC 2' }, { name: 'NPC 3' }],
       players: [
         { name: 'Otto von Duk' },
         { name: 'Arsen' },
@@ -45,7 +57,19 @@ export const gameData = dispatch => (
         { name: 'Jordan' },
         { name: 'Jordan' }
       ]
-    }
+    },
+    modules: [
+      { name: 'Roll History', tags: ['dices'], isActive: true, isOfficial: true },
+      { name: 'Chat', tags: ['other'], isActive: true, isOfficial: true },
+      {
+        name: 'WH Crit Calculator',
+        tags: ['warHammer', 'dices'],
+        isActive: false,
+        isOfficial: true
+      },
+      { name: 'WH initiative table', tags: ['warHammer'], isActive: false, isOfficial: true },
+      { name: 'example', tags: ['examples'], isActive: false, isOfficial: false }
+    ]
   },
   { type, whatActive, value, whatChange, index, email, password }
 ) => {
@@ -116,6 +140,75 @@ export const gameData = dispatch => (
       state.campaing.players.splice(index, 1);
       return { ...state };
     }
+
+    case 'EDIT_USERNAME_TOGGLE': {
+      state.isUsernameEditing = !state.isUsernameEditing;
+      return { ...state };
+    }
+
+    case 'EDIT_EMAIL_TOGGLE': {
+      state.isEmailEditing = !state.isEmailEditing;
+      return { ...state };
+    }
+
+    case 'CHANGE_PROFILE_DATA': {
+      state[whatChange] = value;
+      return { ...state };
+    }
+
+    case 'SAVE_USERNAME': {
+      state.username = state.newUsername;
+      state.isUsernameEditing = !state.isUsernameEditing;
+      return { ...state };
+    }
+
+    case 'CHANGE_PASSWORD': {
+      // let { password, currentPassword, newPassword, newPassword2, errorText } = state;
+
+      // if (state.newPassword === '' || state.newPassword2 === '') {
+      //   state.errorText = 'Password must be longer';
+      // } else if (password === currentPassword && newPassword === newPassword2) {
+      //   password = newPassword;
+      //   errorText = 'Password has been changed';
+      // } else if (password !== currentPassword) {
+      //   errorText = 'Incorrect password';
+      // } else if (newPassword !== newPassword2) {
+      //   errorText = 'Passwords must match';
+      // } else {
+      //   errorText = `Password HASN'T been changed`;
+      // }
+
+      // currentPassword = '';
+      // newPassword = '';
+      // newPassword2 = '';
+      if (state.newPassword === '' || state.newPassword2 === '') {
+        state.errorText = 'Password must be longer';
+      } else if (
+        state.password === state.currentPassword &&
+        state.newPassword === state.newPassword2
+      ) {
+        state.password = state.newPassword;
+        state.errorText = 'Password has been changed';
+      } else if (state.password !== state.currentPassword) {
+        state.errorText = 'Incorrect password';
+      } else if (state.newPassword !== state.newPassword2) {
+        state.errorText = 'Passwords must match';
+      } else {
+        state.errorText = `Password HASN'T been changed`;
+      }
+
+      state.currentPassword = '';
+      state.newPassword = '';
+      state.newPassword2 = '';
+
+      return { ...state };
+    }
+
+    case 'IS_ACTIVE_MODULE_TOGGLE': {
+      whatChange.isActive = !whatChange.isActive;
+      return { ...state };
+    }
+
     default:
       return state;
   }

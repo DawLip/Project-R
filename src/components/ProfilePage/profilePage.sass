@@ -1,0 +1,82 @@
+@import '../sass/_mixins', '../sass/_variables'
+
+.profilePage
+    +wrap()
+    text-align: center
+
+.profilePage__section
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.profilePage__h2
+    font-size: 36px
+    font-weight: normal
+    margin: 15px auto
+
+.profilePage__picture
+    +divBackground()
+    width: 200px
+    height: 230px
+
+.profilePage__img
+    width: 90%
+    margin: 5px auto
+
+.profilePage__upload
+    +btn(25px,70%,16px)
+    color: #ffffff
+
+.profilePage__rectangle
+    +divBackground()
+    width: 300px
+
+.profilePage__module
+    margin-bottom: 20px
+
+.profilePage__p
+    margin: 10px auto
+
+.profilePage__edit
+    position: relative
+    width: 90%
+    height: 35px
+    margin: 0 auto
+    background-color: #C4C4C4
+    border-radius: 50px
+    color: #000
+
+.profilePage__editP
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 66%
+    height: 100%
+
+.profilePage__btn
+    +btn(auto,33%,16px)
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+
+.profilePage__submit
+    +btn(35px, 30%,16px)
+    margin-bottom: 10px
+
+.profilePage__input
+    +inputMain(100%)
+    color: #000
+    margin: 0
+    font-size: 16px
+
+.profilePage__error
+    margin: 15px auto
+    color: #fff
+
+.profilePage__password
+    width: 100%
+
+textarea
+    resize: none
+    height: auto

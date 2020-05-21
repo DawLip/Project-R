@@ -1,0 +1,49 @@
+@import '../sass/_mixins', '../sass/_variables'
+    
+.gamePage
+    +wrap()
+    text-align: center
+
+.gamePage__main
+    display: flex
+
+.gamePage__title
+    +titles(60px)
+
+.gamePage__h2
+    font-size: 48px
+    font-weight: normal
+
+.gamePage__aside
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 30%
+
+.gamePage__img
+    width: 90%
+    margin: 5px 0
+    box-shadow: inset -5px 0px 5px #3F3F41, inset 5px 0px 5px #3F3F41, inset 0px -5px 5px #3F3F41, inset 0px 5px 5px #3F3F41
+    border-radius: 25px
+
+.gamePage__module
+    +divBackground()
+    width: 80%
+    min-height: 250px
+    margin: 30px auto
+
+.gamePage__mainSection
+    flex-grow: 1
+
+.gamePage__btn
+    +btn(60px,80%,36px)
+    text-decoration: none
+    line-height: 60px
+
+.gamePage__section
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+
+.gamePage__player
+    margin: 10px
